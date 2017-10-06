@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _names = @[@"Mo'men", @"3emesh",@"ExcelCodes"];
+    _counter = 0;
+    [_MyLabel setText:_names[_counter]];
 }
 
 
@@ -26,4 +29,14 @@
 }
 
 
+- (IBAction)nextBtn:(id)sender {
+    _counter = ++_counter % [_names count];
+    [_MyLabel setText:_names[_counter]];
+    
+}
+
+- (IBAction)prevBtn:(id)sender {
+    _counter = ([_names count] + _counter - 1) % [_names count];
+    [_MyLabel setText:_names[_counter]];
+}
 @end

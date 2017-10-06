@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
-
+@property (weak, nonatomic) IBOutlet UILabel *MyLabel;
+- (IBAction)nextBtn:(id)sender;
+- (IBAction)prevBtn:(id)sender;
+@property NSArray *names;
+@property int counter;
 @end
 
